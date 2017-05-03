@@ -1,5 +1,4 @@
-require_relative '../../../puppet_x/unbound/validate_addrs'
-
+require 'puppet_x/unbound/validate_addrs'
 
 Puppet::Parser::Functions.newfunction(:validate_unbound_addr) do |args|
   if (args.size != 1) then
