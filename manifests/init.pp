@@ -49,6 +49,7 @@ class unbound (
   $outgoing_range               = $unbound::params::outgoing_range,
   $owner                        = $unbound::params::owner,
   $package_name                 = $unbound::params::package_name,
+  $package_ensure               = $unbound::params::package_ensure,
   $package_provider             = $unbound::params::package_provider,
   $port                         = $unbound::params::port,
   $prefetch                     = $unbound::params::prefetch,
@@ -80,7 +81,7 @@ class unbound (
 
   if $package_name {
     package { $package_name:
-      ensure   => installed,
+      ensure   => $package_ensure,
       provider => $package_provider,
     }
     Package[$package_name] -> Service[$service_name]

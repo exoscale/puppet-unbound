@@ -136,6 +136,7 @@ class unbound::params {
   $outgoing_port_avoid        = '0-32767'
   $outgoing_port_permit       = '32768-65535'
   $outgoing_range             = undef
+  $package_ensure             = installed
   $port                       = 53
   $prefetch                   = false
   $prefetch_key               = false
