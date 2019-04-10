@@ -161,5 +161,5 @@ class unbound::params {
   $custom_server_conf         = []
   $skip_roothints_download    = false
   $service_enable             = true
-  $service_state              = 'runnning'
+  $service_state              = 'running'
 }
