@@ -160,4 +160,6 @@ class unbound::params {
   $cache_max_negative_ttl     = undef
   $custom_server_conf         = []
   $skip_roothints_download    = false
+  $service_enable             = true
+  $service_state              = 'runnning'
 }
