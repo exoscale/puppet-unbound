@@ -59,7 +59,9 @@ class unbound (
   $runtime_dir                  = $unbound::params::runtime_dir,
   $rrset_cache_size             = $unbound::params::rrset_cache_size,
   $rrset_cache_slabs            = $unbound::params::rrset_cache_slabs,
+  $service_enable               = $unbound::params::service_enable,
   $service_name                 = $unbound::params::service_name,
+  $service_state                = $unbound::params::service_state,
   $so_rcvbuf                    = $unbound::params::so_rcvbuf,
   $so_sndbuf                    = $unbound::params::so_sndbuf,
   $statistics_cumulative        = $unbound::params::statistics_cumulative,
@@ -95,9 +97,9 @@ class unbound (
   }
 
   service { $service_name:
-    ensure    => running,
+    ensure    => $service_state,
     name      => $service_name,
-    enable    => true,
+    enable    => $service_enable,
     hasstatus => false,
   }
   if $control_enable {
