@@ -8,9 +8,7 @@ class unbound::params {
     'ubuntu', 'debian': {
       $confdir          = '/etc/unbound'
       $logdir           = '/var/log'
-      $service_enable   = true
       $service_name     = 'unbound'
-      $service_state    = 'running'
       $package_name     = 'unbound'
       $package_provider = undef
       $runtime_dir      = '/var/lib/unbound'
@@ -23,9 +21,7 @@ class unbound::params {
     'redhat', 'centos', 'scientific': {
       $confdir          = '/etc/unbound'
       $logdir           = '/var/log'
-      $service_enable   = true
       $service_name     = 'unbound'
-      $service_state    = 'running'
       $package_name     = 'unbound'
       $package_provider = undef
       $runtime_dir      = '/var/lib/unbound'
@@ -38,9 +34,7 @@ class unbound::params {
     'darwin': {
       $confdir          = '/opt/local/etc/unbound'
       $logdir           = '/opt/local/var/log/unbound'
-      $service_enable   = true
       $service_name     = 'org.macports.unbound'
-      $service_state    = 'running'
       $package_name     = 'unbound'
       $package_provider = 'macports'
       $runtime_dir      = $confdir
@@ -52,9 +46,7 @@ class unbound::params {
     }
     'freebsd': {
       $confdir          = '/var/unbound'
-      $service_enable   = true
       $service_name     = 'local_unbound'
-      $service_state    = 'running'
       $package_name     = undef
       $pidfile          = '/var/run/local_unbound.pid'
       $logdir           = '/var/log/unbound'
@@ -68,9 +60,7 @@ class unbound::params {
     'openbsd': {
       $confdir          = '/var/unbound/etc'
       $logdir           = '/var/log/unbound'
-      $service_enable   = true
       $service_name     = 'unbound'
-      $service_state    = 'running'
       $package_name     = undef
       $package_provider = undef
       $runtime_dir      = $confdir
@@ -83,9 +73,7 @@ class unbound::params {
     'sles', 'opensuse', 'suse': {
       $confdir          = '/etc/unbound'
       $logdir           = '/var/log'
-      $service_enable   = true
       $service_name     = 'unbound'
-      $service_state    = 'running'
       $package_name     = 'unbound'
       $package_provider = undef
       $runtime_dir      = '/var/lib/unbound'
@@ -98,9 +86,7 @@ class unbound::params {
     default: {
       $confdir          = '/etc/unbound'
       $logdir           = '/var/log'
-      $service_enable   = true
       $service_name     = 'unbound'
-      $service_state    = 'running'
       $package_name     = 'unbound'
       $package_provider = undef
       $runtime_dir      = $confdir
@@ -174,4 +160,6 @@ class unbound::params {
   $cache_max_negative_ttl     = undef
   $custom_server_conf         = []
   $skip_roothints_download    = false
+  $service_enable             = true
+  $service_state              = 'runnning'
 }
