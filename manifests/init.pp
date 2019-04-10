@@ -62,7 +62,7 @@ class unbound (
   Optional[Integer] $rrset_cache_slabs,
   $service_name,
   $service_state = 'running',
-  $service_enable = true;
+  $service_enable = true,
   Optional[String] $so_rcvbuf, #bytes, 1024, 1k, etc.
   Optional[String] $so_sndbuf, #bytes, 1024, 1k, etc.
   Boolean $statistics_cumulative,
