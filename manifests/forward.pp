@@ -21,6 +21,11 @@
 # [*config_file*]
 #   (optional) name of configuration file
 #
+# [*address_lookup*]
+#  (optional) If set, it will do a hiera lookup on the string provided. This
+#  lookup must return either a string with a single ip address, or an array
+#  of IP addresses and will override whatever is in [*addresss*]
+
 define unbound::forward (
   $address,
   $zone          = $name,
