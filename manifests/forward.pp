@@ -38,9 +38,11 @@ define unbound::forward (
   # }
 
   if $address =~ /^HIERA=/ {
+    notify{'MATCHING HIERA!!!!--------------------------------------------------------------------':}
     $forward_address = lookup(regsubst($address, 'HIERA=', ''))
   }
   else {
+    notify{'NOT MATCHING HIERA!!!!======================================================================':}
     $forward_address = $address
   }
 
