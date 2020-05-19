@@ -26,7 +26,7 @@ define unbound::forward (
   $zone          = $name,
   Pattern[/yes|no/] $forward_first = 'no',
   $config_file   = $unbound::config_file,
-  $address_lookup = ''
+  # $address_lookup = '',
 ) {
 
   # If we have a lookup rule, use that to get the address(es)
