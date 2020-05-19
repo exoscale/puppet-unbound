@@ -36,7 +36,7 @@ define unbound::forward (
   include ::unbound::params
 
   if $address_lookup != '' {
-    $forward_address = lookup($forward_address)
+    $forward_address = lookup($address_lookup)
   }
   else {
     $forward_address = $address
