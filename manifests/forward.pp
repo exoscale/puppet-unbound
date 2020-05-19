@@ -37,6 +37,14 @@ define unbound::forward (
   #   $forward_address = $address
   # }
 
+  if $address =~ /^HIERA=/ {
+    $forward_address = lookup(regsubst($address, 'HIERA=', ''))
+  }
+  else {
+    $forward_address = $address
+  }
+
+
   concat::fragment { "unbound-forward-${name}":
     order   => '20',
     target  => $config_file,
