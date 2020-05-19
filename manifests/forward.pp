@@ -26,7 +26,6 @@ define unbound::forward (
   $zone          = $name,
   Pattern[/yes|no/] $forward_first = 'no',
   $config_file   = $unbound::config_file,
-  # $address_lookup = '',
 ) {
 
   # # If we have a lookup rule, use that to get the address(es)
@@ -37,14 +36,14 @@ define unbound::forward (
   #   $forward_address = $address
   # }
 
-  if $address =~ /^HIERA=/ {
-    notify{'MATCHING HIERA!!!!--------------------------------------------------------------------':}
-    $forward_address = lookup(regsubst($address, 'HIERA=', ''))
-  }
-  else {
-    notify{'NOT MATCHING HIERA!!!!======================================================================':}
-    $forward_address = $address
-  }
+  # if $address =~ /^HIERA=/ {
+  #   notify{'MATCHING HIERA!!!!--------------------------------------------------------------------':}
+  #   $forward_address = lookup(regsubst($address, 'HIERA=', ''))
+  # }
+  # else {
+  #   notify{'NOT MATCHING HIERA!!!!======================================================================':}
+  #   $forward_address = $address
+  # }
 
 
   concat::fragment { "unbound-forward-${name}":
