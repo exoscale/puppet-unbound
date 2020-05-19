@@ -28,14 +28,6 @@ define unbound::forward (
   $config_file   = $unbound::config_file,
 ) {
 
-  # # If we have a lookup rule, use that to get the address(es)
-  # if $address_lookup != '' {
-  #   $forward_address = hiera($address_lookup)    
-  # }
-  # else {
-  #   $forward_address = $address
-  # }
-
   # if $address =~ /^HIERA=/ {
   #   notify{'MATCHING HIERA!!!!--------------------------------------------------------------------':}
   #   $forward_address = lookup(regsubst($address, 'HIERA=', ''))
