@@ -26,6 +26,7 @@ define unbound::forward (
   $zone          = $name,
   $forward_first = 'no',
   $config_file   = $unbound::params::config_file,
+  $address_lookup = ''
 ) {
 
   # Validate yes/no
@@ -33,6 +34,13 @@ define unbound::forward (
   validate_re($forward_first, $r_yesno)
 
   include ::unbound::params
+
+  if $address_lookup != '' {
+    $forward_address = lookup($forward_address)
+  }
+  else {
+    $forward_address = $address
+  }
 
   concat::fragment { "unbound-forward-${name}":
     order   => '20',

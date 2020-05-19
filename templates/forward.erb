@@ -1,11 +1,11 @@
 forward-zone:
   name: "<%= @zone %>"
-<% if @address.is_a? Array -%>
-<% @address.each do |addr| -%>
+<% if @forward_address.is_a? Array -%>
+<% @forward_address.each do |addr| -%>
   forward-addr: <%= addr %>
 <% end -%>
-<% elsif @address != '' -%>
-  forward-addr: <%= @address %>
+<% elsif @forward_address != '' -%>
+  forward-addr: <%= @forward_address %>
 <% end -%>
 <% if @forward_first != 'no' -%>
   forward-first: <%= @forward_first %>
