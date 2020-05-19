@@ -29,13 +29,13 @@ define unbound::forward (
   # $address_lookup = '',
 ) {
 
-  # If we have a lookup rule, use that to get the address(es)
-  if $address_lookup != '' {
-    $forward_address = hiera($address_lookup)    
-  }
-  else {
-    $forward_address = $address
-  }
+  # # If we have a lookup rule, use that to get the address(es)
+  # if $address_lookup != '' {
+  #   $forward_address = hiera($address_lookup)    
+  # }
+  # else {
+  #   $forward_address = $address
+  # }
 
   concat::fragment { "unbound-forward-${name}":
     order   => '20',
