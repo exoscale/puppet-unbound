@@ -21,11 +21,17 @@
 # [*config_file*]
 #   (optional) name of configuration file
 #
+# [*address_lookup*]
+#  (optional) If set, it will do a hiera lookup on the string provided. This
+#  lookup must return either a string with a single ip address, or an array
+#  of IP addresses and will override whatever is in [*addresss*]
+
 define unbound::forward (
   $address,
   $zone          = $name,
   $forward_first = 'no',
   $config_file   = $unbound::params::config_file,
+  $address_lookup = ''
 ) {
 
   # Validate yes/no
@@ -33,6 +39,13 @@ define unbound::forward (
   validate_re($forward_first, $r_yesno)
 
   include ::unbound::params
+
+  if $address_lookup != '' {
+    $forward_address = lookup($address_lookup)
+  }
+  else {
+    $forward_address = $address
+  }
 
   concat::fragment { "unbound-forward-${name}":
     order   => '20',
