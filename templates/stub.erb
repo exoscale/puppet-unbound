@@ -9,3 +9,6 @@ stub-zone:
   stub-addr: <%= addr %>
 <% end -%>
 <% end -%>
+<% if @stub_first == 'yes' -%>
+  stub-first: <%= @stub_first %>
+<% end -%>

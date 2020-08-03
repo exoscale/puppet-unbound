@@ -33,6 +33,7 @@ define unbound::stub (
   $insecure    = false,
   $type        = 'transparent',
   $config_file = $unbound::params::config_file,
+  $stub_first  = 'no',
 ) {
 
   if ! $address {
