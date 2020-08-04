@@ -10,5 +10,8 @@ stub-zone:
 <% end -%>
 <% end -%>
 <% if @stub_first == 'yes' -%>
-  stub-first: <%= @stub_first %>
+  stub-first: yes
+<% end -%>
+<% if @stub_no_cache == 'yes' -%>
+  stub-no-cache: yes
 <% end -%>

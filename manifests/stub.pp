@@ -1,6 +1,7 @@
 # Class: unbound::stub
 #
 # Create an unbound stub zone for caching upstream name resolvers
+# REF: https://nlnetlabs.nl/documentation/unbound/unbound.conf/ -> "Stub Zone Options"
 #
 # === Parameters:
 #
@@ -30,10 +31,11 @@
 #
 define unbound::stub (
   $address,
-  $insecure    = false,
-  $type        = 'transparent',
-  $config_file = $unbound::params::config_file,
-  $stub_first  = 'no',
+  $insecure      = false,
+  $type          = 'transparent',
+  $config_file   = $unbound::params::config_file,
+  $stub_first    = 'no',
+  $stub_no_cache = 'no',
 ) {
 
   if ! $address {
