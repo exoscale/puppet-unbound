@@ -34,8 +34,9 @@ define unbound::stub (
   $insecure      = false,
   $type          = 'transparent',
   $config_file   = $unbound::params::config_file,
-  $stub_first    = 'no',
+  $stub_first    = false,
   $stub_no_cache = 'no',
+  $no_cache      = false,
 ) {
 
   if ! $address {

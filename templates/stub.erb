@@ -9,9 +9,9 @@ stub-zone:
   stub-addr: <%= addr %>
 <% end -%>
 <% end -%>
-<% if @stub_first == 'yes' -%>
+<% if @stub_first == 'yes' || @stub_first.to_s == 'true'-%>
   stub-first: yes
 <% end -%>
-<% if @stub_no_cache == 'yes' -%>
+<% if @stub_no_cache == 'yes' || @no_cache.to_s == 'true' -%>
   stub-no-cache: yes
 <% end -%>
