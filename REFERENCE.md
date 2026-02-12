@@ -11,8 +11,8 @@
 
 ### Defined types
 
-* [`unbound::forward`](#unbound--forward): Class: unbound::forward  Configures a zone for DNS forwarding  == Parameters:  [*zone*]   (required) the name of the zone.  [*address*]   IP 
-* [`unbound::localzone`](#unbound--localzone): Class: unbound::localzone  Configures a local zone. The  default  zones  are  localhost, reverse 127.0.0.1 and ::1, and the AS112 zones. The 
+* [`unbound::forward`](#unbound--forward): Class: unbound::forward  Configures a zone for DNS forwarding  == Parameters:  [*zone*]   (required) the name of the zone.  [*address*]   IP
+* [`unbound::localzone`](#unbound--localzone): Class: unbound::localzone  Configures a local zone. The  default  zones  are  localhost, reverse 127.0.0.1 and ::1, and the AS112 zones. The
 * [`unbound::record`](#unbound--record): Class: unbound::record  Create an unbound static DNS record override  == Parameters:  [*content*]   (required) The name of the record (ip add
 * [`unbound::stub`](#unbound--stub): Class: unbound::stub  Create an unbound stub zone for caching upstream name resolvers  === Parameters:  [*address*]   (required) IP address o
 
@@ -89,6 +89,7 @@ The following parameters are available in the `unbound` class:
 * [`define_tag`](#-unbound--define_tag)
 * [`do_ip4`](#-unbound--do_ip4)
 * [`do_ip6`](#-unbound--do_ip6)
+* [`prefer_ip4`](#-unbound--prefer_ip4)
 * [`prefer_ip6`](#-unbound--prefer_ip6)
 * [`do_udp`](#-unbound--do_udp)
 * [`do_tcp`](#-unbound--do_tcp)
@@ -609,6 +610,14 @@ Data type: `Boolean`
 
 
 Default value: `true`
+
+##### <a name="-unbound--prefer_ip4"></a>`prefer_ip4`
+
+Data type: `Boolean`
+
+
+
+Default value: `false`
 
 ##### <a name="-unbound--prefer_ip6"></a>`prefer_ip6`
 
