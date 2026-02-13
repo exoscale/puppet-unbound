@@ -51,6 +51,7 @@ class unbound (
   Array[String[1]]                              $define_tag                      = [],     # version 1.5.10
   Boolean                                       $do_ip4                          = true,
   Boolean                                       $do_ip6                          = true,
+  Boolean                                       $prefer_ip4                      = false,  # version 1.11.0
   Boolean                                       $prefer_ip6                      = false,  # version 1.5.10
   Boolean                                       $do_udp                          = true,
   Boolean                                       $do_tcp                          = true,
@@ -135,7 +136,7 @@ class unbound (
   Optional[Integer]                             $key_cache_slabs                 = undef,
   Optional[Unbound::Size]                       $neg_cache_size                  = undef,
   Boolean                                       $unblock_lan_zones               = false,
-  Boolean                                       $insecure_lan_zones              = false,  # version 1.5.8 
+  Boolean                                       $insecure_lan_zones              = false,  # version 1.5.8
   Unbound::Local_zone                           $local_zone                      = {},
   Array[String[1]]                              $local_data                      = [],
   Array[String[1]]                              $local_data_ptr                  = [],
